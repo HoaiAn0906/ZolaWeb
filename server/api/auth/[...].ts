@@ -4,7 +4,7 @@ import axios from '@/utils/axios'
 
 export default NuxtAuthHandler({
   // secret needed to run nuxt-auth in production mode (used to encrypt data)
-  secret: process.env.NUXT_SECRET,
+  secret: '123',
   pages: {
     // Change the default behavior to use `/login` as the path for the sign-in page
     signIn: '/auth/login',
