@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   ],
   auth: {
     origin: process.env.ORIGIN,
-    enableGlobalAppMiddleware: true,
+    enableGlobalAppMiddleware: false,
     enableSessionRefreshPeriodically: false,
     enableSessionRefreshOnWindowFocus: false,
   },
