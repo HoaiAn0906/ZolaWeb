@@ -56,7 +56,7 @@ export default NuxtAuthHandler({
     redirect: async (url) => {
       const runtimeConfig = useRuntimeConfig()
 
-      return Promise.resolve(runtimeConfig.public.nextAuthUrl)
+      return Promise.resolve(runtimeConfig.public.nextAuthUrl + '/auth/login')
     }
   },
 })
