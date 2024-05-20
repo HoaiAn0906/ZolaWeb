@@ -53,8 +53,10 @@ export default NuxtAuthHandler({
       ;(session as any).id = token.id
       return Promise.resolve(session)
     },
-    redirect: async (url, baseUrl) => {
-      return Promise.resolve(url)
+    redirect: async (url) => {
+      const runtimeConfig = useRuntimeConfig()
+
+      return Promise.resolve(runtimeConfig.public.nextAuthUrl)
     }
   },
 })
