@@ -123,8 +123,13 @@ const onMessageReceived = (payload) => {
     }
     toast.success('Nhóm ' + message.content + ' đã bị giải tán')
   } else {
-    messageReceived.value = message
-    reloadChatListing.value = true
+    if (chatGroupId.value === message.chatId && message.recipientId == null) {
+      messageReceived.value = message
+      reloadChatListing.value = true
+    } else if (chatGroupId.value !== message.chatId && message.recipientId != null) {
+      messageReceived.value = message
+      reloadChatListing.value = true
+    }
   }
 }
 
