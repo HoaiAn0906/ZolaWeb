@@ -126,7 +126,7 @@ const onMessageReceived = (payload) => {
     if (chatGroupId.value === message.chatId && !message.recipientId) {
       messageReceived.value = message
       reloadChatListing.value = true
-    } else if (chatGroupId.value === '' && message.recipientId) {
+    } else if (chatGroupId.value === '' && message.recipientId && message.senderId === userRecipient.value.id) {
       messageReceived.value = message
       reloadChatListing.value = true
     }
